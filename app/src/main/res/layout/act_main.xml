@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/hello_usman"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/cloud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="148dp"
+        app:layout_constraintBaseline_toBottomOf="@id/navigation_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_bottom_nav"
+        android:elevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/options" />
+
+    <ImageView
+        android:id="@+id/cloud"
+        android:layout_width="94dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toEndOf="@+id/date"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149"
+        app:srcCompat="@drawable/cloud" />
+
+    <TextView
+        android:id="@+id/temperature_value"
+        android:layout_width="23dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="104dp"
+        android:backgroundTint="#000000"
+        android:text="@string/_5"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/temperature_dot"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/date"
+        app:layout_constraintStart_toEndOf="@+id/temperature_value"
+        app:layout_constraintTop_toTopOf="@+id/temperature_value"
+        app:layout_constraintVertical_bias="0.315"
+        app:srcCompat="@drawable/dot" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_30_jan_2024"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperature_value" />
+
+    <ImageView
+        android:id="@+id/location_symbol"
+        android:layout_width="18dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="168dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/location" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="142dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="120dp"
+        android:text="@string/islamabad_pakistan"
+        app:layout_constraintBottom_toBottomOf="@+id/location_symbol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="410dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="276dp"
+
+        android:layout_marginBottom="12dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/navigation_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv1"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="8dp"
+                android:elevation="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/cv2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/trafficadvisor"
+                    android:tintMode="screen"
+                    app:tint="#0E426C"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv2"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="8dp"
+                android:elevation="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/cv3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cv1"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/routeplan"
+                    android:tintMode="screen"
+                    app:tint="#7D4E07"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv3"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="8dp"
+                android:elevation="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cv2"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/challan"
+                    android:tintMode="screen"
+                    app:tint="#840930"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+
+            //
+            <TextView
+                android:id="@+id/challanID"
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:width="98dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/traffic_advisory"
+                app:layout_constraintEnd_toStartOf="@+id/rote_plan"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv1" />
+
+            //
+            <TextView
+                android:id="@+id/rote_plan"
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:width="98dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/route_planner"
+                app:layout_constraintEnd_toStartOf="@+id/tv3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/challanID"
+                app:layout_constraintTop_toBottomOf="@+id/cv2" />
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:width="98dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/challan_payment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/rote_plan"
+                app:layout_constraintTop_toBottomOf="@+id/cv3" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv5"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="20dp"
+                android:elevation="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/cv6"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cv4"
+                app:layout_constraintTop_toBottomOf="@+id/rote_plan" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/schedule"
+                    android:tintMode="screen"
+                    app:tint="#AF1FA8"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv6"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="20dp"
+                android:elevation="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cv5"
+                app:layout_constraintTop_toBottomOf="@+id/tv3" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/cancelappoint"
+                    android:tintMode="screen"
+                    app:tint="#909321"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv4"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="20dp"
+                android:elevation="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/cv5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/challanID" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/lisence"
+                    android:tintMode="screen"
+                    app:tint="#136B11"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:width="98dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/schedule_appointment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv5" />
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:width="98dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/e_license_registration"
+                app:layout_constraintEnd_toStartOf="@+id/tv5"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv4" />
+
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_width="90dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:width="98dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/cancel_appointments"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv5"
+                app:layout_constraintTop_toBottomOf="@+id/cv6" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv10"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="20dp"
+                android:elevation="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/cv8"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv4"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/regvehicle"
+                    android:tintMode="screen"
+                    app:tint="#0E426C"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv7"
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/registered_vehicle"
+                app:layout_constraintEnd_toStartOf="@+id/tv8"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv10" />
+
+            <TextView
+                android:id="@+id/tv8"
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/driving_license_center"
+                app:layout_constraintEnd_toStartOf="@+id/tv9"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv7"
+                app:layout_constraintTop_toBottomOf="@+id/cv8" />
+
+            <TextView
+                android:id="@+id/tv9"
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/traffic_rules"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv8"
+                app:layout_constraintTop_toBottomOf="@+id/cv9" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv11"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="60dp"
+                app:cardCornerRadius="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/cv10"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/cv10"
+                app:layout_constraintTop_toBottomOf="@+id/tv7"
+                app:layout_constraintVertical_bias="0.064" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/warnings"
+                    android:tintMode="screen"
+                    app:tint="#39115E"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cv11"
+                app:layout_constraintEnd_toEndOf="@+id/cv8"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/cv8"
+                app:layout_constraintTop_toBottomOf="@+id/tv7" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/feedback"
+                    android:tintMode="screen"
+                    app:tint="#1B350D"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv9"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="20dp"
+                android:elevation="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cv8"
+                app:layout_constraintTop_toBottomOf="@+id/tv6"
+                >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/rules"
+                    android:tintMode="screen"
+                    app:tint="#78D10C"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv10"
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="80dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/live_incidents"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv11"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv11"
+                android:layout_width="98dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/feedbacks_complaints"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                app:layout_constraintVertical_bias="0.054" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv8"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="20dp"
+                android:elevation="12dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/cv9"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cv10"
+                app:layout_constraintTop_toBottomOf="@+id/tv5" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/driving"
+                    android:tintMode="screen"
+                    app:tint="#0E426C"
+                    android:layout_gravity="center"
+                    app:shapeAppearance="@style/RoundImage"
+                    />
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
